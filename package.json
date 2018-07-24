@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Holy guacamole, random Robin exclamation catch-phrases",
   "author": "Terkel Gjervig",
-  "module": "esm/index.mjs",
+  "module": "src/index.mjs",
   "bin": "src/bin.mjs",
   "files": [
     "src"
