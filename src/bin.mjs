@@ -1,32 +1,33 @@
-#!/usr/bin/env node
-const exclamations = require('./');
+#!/usr/bin/env node --experimental-modules
+import exclamations from './';
 
 const help = `
 
     Examples
         $ exclamation'
             Holy Alps
-          
+
         $ exclamation --all'
             Holy Agility
             Holy Almost
             ...
-    
+
     Options
         --all   Get all exclamations instead of a random one'
 `;
 
-let args = process.argv.slice(2);
+const args = process.argv.slice(2);
+let output = exclamations.random();
 
 if (args.includes('--help') || args.includes('-h')) {
-  console.log(help);
-  process.exit();
+  output = help;
 }
 
 if (args.includes('--all')) {
-  console.log(exclamations.all.join('\n'));
-  process.exit();
+  output = exclamations.all.join('\n');
 }
 
-console.log(exclamations.random());
+console.log(output);
 process.exit();
+
+export default output;

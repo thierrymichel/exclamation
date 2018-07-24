@@ -1,10 +1,10 @@
 {
   "name": "exclamation",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Holy guacamole, random Robin exclamation catch-phrases",
   "author": "Terkel Gjervig",
-  "main": "src/index.js",
-  "bin": "src/bin.js",
+  "module": "esm/index.mjs",
+  "bin": "src/bin.mjs",
   "files": [
     "src"
   ],
@@ -13,8 +13,8 @@
     "url": "https://github.com/terkelg/exclamation"
   },
   "scripts": {
-    "start": "node src/bin.js",
-    "test": "tape test/*.js | tap-spec"
+    "start": "node --experimental-modules src/bin.mjs",
+    "test": "tape -r @std/esm test/index.mjs"
   },
   "keywords": [
     "robin",
@@ -25,6 +25,7 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@std/esm": "^0.26.0",
     "tap-spec": "^4.1.1",
     "tape": "^4.8.0"
   }
